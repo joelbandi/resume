@@ -10,7 +10,7 @@ sudo apt update && sudo apt install texlive-full
 # Fedora
 sudo dnf install texlive-scheme-full
 # macOS MacTex Install
-brew cask install mactex-no-gui
+brew install mactex-no-gui
 ```
 
 2. Install Vscode extension if applicable 
