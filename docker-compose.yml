@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  resume:
+    image: aergus/latex:latest
+    working_dir: /home/src
+    volumes: 
+      - .:/home/src
+    command: "xelatex resume.tex"
