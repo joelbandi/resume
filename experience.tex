@@ -4,12 +4,13 @@
     \descript{Staff Software Engineer}
     \location{Apr 2024 – present | San Luis Obispo, CA}
     \begin{tightemize}
-      \item SME for CDP Analytics platform, creating and maintaining high throughput data ingestion pipelines.
       \item Designing data schemas in OLAP databases for highly performant querying and dataviz applications.
       \item On-call responsibility to manage observability and uptime for team owned services, debugging and resolving SEVs.
-      \item Maintaining multiple self hosted, highly replicated and sharded Clickhouse DB clusters on kubernetes.
-      \item Developing working relationships with other engineering teams to improve their Clickhouse experience.
-      \item Skills used: Go, Kubernetes, Helm, Zookeeper, IAC and OAC.
+      \item Maintaining multiple self hosted, highly replicated and sharded Clickhouse DB platform on Kubernetes for other engineering teams to use.
+      \item Maintaining a Trace DB like system for other engineering teams to use for contact tracing in their business logic with BCR and GDPR compliance.
+      \item Providing Clickhouse APIs and RPC servers for ingestion, querying, schema migrations control, backups, monitoring and alerting.
+      \item Worked on transforming the single cluster, multi-domain architecture to multi-cluster single domain architecture for clickhouse allowing us to cost-optimize. This allowed us to achieve a cloud COGS savings of 24\% and increase query speed by 29\% on average.
+      \item Skills used: Go, Kubernetes, Helm, Zookeeper, Kafka, Infra-as-code and Observability-as-code.
     \end{tightemize}
     \sectionsep
 
@@ -19,6 +20,9 @@
     \begin{tightemize}
       \item Working on CDP Analytics platform, creating and maintaining high throughput data ingestion pipelines.
       \item On-call responsibility to manage observability and uptime for team owned services.
+      \item As an SME for analytics platform, I was able to consult on a sev that is affecting a churn risk customer, quickly debugged the upstream data source issue and implement a quick fix to the systems while the upstream gets fixed thereby maintaining customer satisfaction.
+      \item Re-designed and re-implemented a v2 ingestion pipeline that decreased memory requirements for querying by 100\%, added deduplication and made the query results deterministic.
+      \item Created a new deployment pattern for multi-deployments within the same codebase while being backwards compatible with the existing GitOps deployment flow.
       \item Skills used: Go, React, Kubernetes, IAC and OAC.
     \end{tightemize} 
     \sectionsep
@@ -34,22 +38,18 @@
     \sectionsep
 
 	\runsubsection{Appfolio Incorporated}
-    \descript{Software Engineer II}
-    \location{May 2021 – Nov 2021 | Santa Barbara, CA}
+    \descript{Software Engineer I and II}
+    \location{Jul 2017 – Nov 2021 | Santa Barbara, CA}
     \begin{tightemize}
       \item Worked with AppFolio tenant screening product infrastructure and product team.
       \item Lead multiple third party integrations and compliance related goals under deadlines while on-call.
-    \end{tightemize} 
-    \sectionsep
-
-	\runsubsection{Appfolio Incorporated}
-    \descript{Software Engineer}
-    \location{Jul 2017 – May 2021 | Santa Barbara, CA}
-    \begin{tightemize}
-      \item Worked with AppFolio tenant screening product infrastructure and product team.
+      \item Co-created the data vendor fallback pattern that auto switches to the next available pattern when the primary vendor is down reducing our outage incidents to effectively zero.
+      \item Created and maintained many open source gems for use in company and ruby community.
+      \item Created circle CI plugin to warn when adding code not compatible with the next rails version.
+      \item Co-Created full featured internal tool to help public record analysts to manage customer interactions regarding screening reports, this reduced the customer turn around time from 3 days to 1 hour.
       \item Mentored many summer interns and helped with onboarding of new hires.
       \item Skills used: Rails, React, Node and other database technologies.
-    \end{tightemize}
+    \end{tightemize} 
     \sectionsep
 
 	% \runsubsection{Procore Technologies}
