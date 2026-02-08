@@ -1,5 +1,14 @@
 # CLAUDE.md
 
+## ONE-PAGE RULE (MANDATORY)
+
+The résumé MUST be exactly one page at all times. This rule is non-negotiable and applies after every change. After adding or modifying any content, verify the compiled PDF is still one page. If it spills onto a second page:
+
+1. First, try compacting: reduce bullet points, shorten descriptions, remove unnecessary content.
+2. As a last resort, remove the earliest (oldest) experience entry from `experience.tex`.
+
+Never commit a résumé that exceeds one page.
+
 ## Project Overview
 
 LaTeX resume for Joel Bandi. Compiles to PDF using XeLaTeX inside Docker. No CI/CD, no tests, no deployment pipeline — just source `.tex` files that produce `resume.pdf`.
