@@ -57,6 +57,14 @@ This runs `xelatex resume.tex` inside the Docker container and outputs `resume.p
 - **Colors** are defined as hex values in `base.cls`: primary `#2b2b2b`, headings `#6A6A6A`, subheadings `#333333`, date `#666666`.
 - `resume.pdf` is committed to git so the latest version is always available without building.
 
+## Dev Workflow
+
+1. **Make changes** to the `.tex` source files.
+2. **Run `make up`** to compile the PDF via Docker.
+3. **Inspect `resume.pdf`** and confirm everything looks correct (layout, spacing, content).
+
+Always run `make up` and verify the output before committing or opening a PR. Since `resume.pdf` is tracked in git, every commit should include a freshly compiled PDF that matches the source.
+
 ## Adding a New Experience Entry
 
 ```latex
