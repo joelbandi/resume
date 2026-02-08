@@ -37,6 +37,14 @@ make up
 
 This runs `xelatex resume.tex` inside the Docker container and outputs `resume.pdf`.
 
+## Development Workflow
+
+1. **Make changes** to `.tex` files (or `base.cls` for styling).
+2. **Run `make up`** (or `docker-compose up`) to recompile the PDF.
+3. **Inspect `resume.pdf`** and confirm everything looks correct.
+
+Always run `make up` before committing or opening a PR. A pre-commit hook enforces this — it rebuilds the PDF and stages the updated `resume.pdf` automatically so the committed PDF always matches the source.
+
 ## Key LaTeX Commands (defined in base.cls)
 
 | Command | Purpose |
