@@ -7,7 +7,7 @@ The résumé MUST be exactly one page at all times. This rule is non-negotiable 
 1. First, try compacting: reduce bullet points, shorten descriptions, remove unnecessary content.
 2. As a last resort, remove the earliest (oldest) experience entry from `experience.tex`.
 
-Never commit a résumé that exceeds one page.
+CI enforces this automatically via `pdfinfo` on every push to master — a build exceeding one page will fail. Still verify locally with `make up` before pushing.
 
 ## Project Overview
 
@@ -69,10 +69,11 @@ This runs `xelatex resume.tex` inside the Docker container and outputs `resume.p
 ## Dev Workflow
 
 1. **Make changes** to the `.tex` source files.
-2. **Run `make up`** to compile the PDF via Docker.
+2. **Run `make up`** to compile the PDF via Docker and preview locally.
 3. **Inspect `resume.pdf`** and confirm everything looks correct (layout, spacing, content).
+4. **Commit and push** — CI compiles the PDF, enforces the one-page rule, and deploys to the `docs` branch automatically.
 
-Always run `make up` and verify the output before committing or opening a PR. Since `resume.pdf` is tracked in git, every commit should include a freshly compiled PDF that matches the source.
+`resume.pdf` is **not** tracked in git (it's in `.gitignore`). The compiled PDF lives on the `docs` branch, published by GitHub Actions on every merge to `master`.
 
 ## Adding a New Experience Entry
 

@@ -1,0 +1,51 @@
+name: Build and Deploy Resume
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: aergus/latex:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile PDF
+        run: xelatex resume.tex
+
+      - name: Check page count
+        run: |
+          apt-get update -qq && apt-get install -y -qq poppler-utils
+          pages=$(pdfinfo resume.pdf | grep "Pages:" | awk '{print $2}')
+          [ "$pages" = "1" ] || { echo "ERROR: resume is $pages page(s), must be exactly 1"; exit 1; }
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdf
+          path: resume.pdf
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: resume-pdf
+
+      - name: Prepare publish directory
+        run: |
+          mkdir docs-out
+          cp resume.pdf docs-out/
+          cp index.html docs-out/
+
+      - name: Deploy to docs branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: docs
+          publish_dir: ./docs-out

@@ -26,6 +26,9 @@
 # *.eps
 # *.pdf
 
+## Compiled resume output (built by CI, not committed to source branch)
+resume.pdf
+
 ## Generated if empty string is given at "Please type another file name for output:"
 .pdf
 
