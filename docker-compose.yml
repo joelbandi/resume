@@ -2,7 +2,7 @@ version: '3'
 
 services:
   resume:
-    image: aergus/latex:latest
+    image: aergus/latex@sha256:137806234ca63984d1420dbec0535c0c36fe6f159307bb86ee272a98392b8030
     working_dir: /home/src
     volumes: 
       - .:/home/src
